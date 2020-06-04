@@ -1,20 +1,18 @@
-# This is an input class. Do not edit.
 class BST:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
 
+#iterative approach
+#O(N) time, O(logN) space
 
 def validateBst(tree):
-    # Write your code here.
 	node = tree
 	
 	lst = [(node, float("-inf"), float("inf"))]
 	
 	while len(lst) > 0:
-		
-		print(lst,"---------")
 		
 		poped, min, max = lst.pop()
 		
@@ -26,7 +24,6 @@ def validateBst(tree):
 		
 		lst.append((poped.left, min, poped.value))
 		lst.append((poped.right, poped.value, max))
-		print(lst,"########")
 		
 	return True
 		
